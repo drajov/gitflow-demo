@@ -1,0 +1,14 @@
+version: '3'
+services:
+  api:
+    container_name: node-boilerplate
+    build:
+      dockerfile: Dockerfile
+      context: .
+    env_file: 
+      - .env
+    command: npm run start:dev
+    volumes:
+      - .:/home/node/app
+    ports:
+      - 3000:3000
